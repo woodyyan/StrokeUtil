@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -13,6 +14,7 @@ namespace WpfApplication1
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const double gap = 3;
         private PathGeometry currentPathGeometry;
         private Point? previousPosition;
         private DispatcherTimer timer;
@@ -30,6 +32,9 @@ namespace WpfApplication1
                 currentPath = new Path();
                 currentPath.Stroke = new SolidColorBrush(Colors.Black);
                 currentPath.StrokeThickness = 4;
+                currentPath.StrokeEndLineCap = PenLineCap.Round;
+                currentPath.StrokeLineJoin = PenLineJoin.Round;
+                currentPath.StrokeMiterLimit = 2;
                 currentPath.Data = currentPathGeometry = new PathGeometry();
                 Grid1.Children.Add(currentPath);
             }
@@ -47,7 +52,7 @@ namespace WpfApplication1
         private bool Diff(Point currentPosition)
         {
             if (previousPosition == null) return true;
-            else return (Math.Abs(currentPosition.X - previousPosition.Value.X) >= 1 || Math.Abs(currentPosition.Y - previousPosition.Value.Y) >= 1);
+            else return (Math.Abs(currentPosition.X - previousPosition.Value.X) >= gap || Math.Abs(currentPosition.Y - previousPosition.Value.Y) >= gap);
         }
 
         private void Grid_StylusUp(object sender, StylusEventArgs e)
@@ -142,8 +147,13 @@ namespace WpfApplication1
 
         private void Button2_Click(object sender, RoutedEventArgs e)
         {
-            string toString = currentPathGeometry.ToString();
-            System.IO.File.WriteAllText("d:\\test.txt", toString);
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.DefaultExt = ".txt";
+            if (dialog.ShowDialog().Value)
+            {
+                string toString = currentPathGeometry.ToString();
+                System.IO.File.WriteAllText(dialog.FileName, toString);
+            }
         }
 
         private void Button3_Click(object sender, RoutedEventArgs e)

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -30,7 +29,7 @@ namespace WpfApplication1
             {
                 currentPath = new Path();
                 currentPath.Stroke = new SolidColorBrush(Colors.Black);
-                currentPath.StrokeThickness = 2;
+                currentPath.StrokeThickness = 4;
                 currentPath.Data = currentPathGeometry = new PathGeometry();
                 Grid1.Children.Add(currentPath);
             }
@@ -66,7 +65,7 @@ namespace WpfApplication1
                 int index = 0;
 
                 timer = new DispatcherTimer();
-                timer.Interval = TimeSpan.FromMilliseconds(16);
+                timer.Interval = TimeSpan.FromMilliseconds(8);
                 timer.Tick += delegate
                 {
                     var nextPoint = GetNextPoint(oldPathGeometry, index);

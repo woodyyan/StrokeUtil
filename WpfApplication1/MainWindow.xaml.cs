@@ -145,5 +145,10 @@ namespace WpfApplication1
             string toString = currentPathGeometry.ToString();
             System.IO.File.WriteAllText("d:\\test.txt", toString);
         }
+
+        private void Button3_Click(object sender, RoutedEventArgs e)
+        {
+            currentPath.Data = currentPathGeometry = new PathGeometry();
+        }
     }
 }

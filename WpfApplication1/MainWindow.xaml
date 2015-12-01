@@ -14,6 +14,7 @@
         <StackPanel>
             <Button Click="Button_Click" VerticalAlignment="Top" Margin="5">Play</Button>
             <Button Click="Button2_Click" VerticalAlignment="Top" Margin="5">Save</Button>
+            <Button Click="Button3_Click" VerticalAlignment="Top" Margin="5">Clear</Button>
         </StackPanel>
     </Grid>
 </Window>

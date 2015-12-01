@@ -11,6 +11,9 @@
           StylusDown="Grid_StylusDown" 
           StylusMove="Grid_StylusMove" 
           StylusUp="Grid_StylusUp">
-        <Button Click="Button_Click">Play</Button>
+        <StackPanel>
+            <Button Click="Button_Click" VerticalAlignment="Top" Margin="5">Play</Button>
+            <Button Click="Button2_Click" VerticalAlignment="Top" Margin="5">Save</Button>
+        </StackPanel>
     </Grid>
 </Window>

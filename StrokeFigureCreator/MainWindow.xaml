@@ -10,7 +10,10 @@
           IsManipulationEnabled="True"
           StylusDown="Grid_StylusDown" 
           StylusMove="Grid_StylusMove" 
-          StylusUp="Grid_StylusUp">
+          StylusUp="Grid_StylusUp"
+          MouseDown="Grid1_MouseDown"
+          MouseMove="Grid1_MouseMove"
+          MouseUp="Grid1_MouseUp" >
         <StackPanel>
             <Button Click="Button_Click" VerticalAlignment="Top" Margin="5">Play</Button>
             <Button Click="Button2_Click" VerticalAlignment="Top" Margin="5">Save</Button>

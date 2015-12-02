@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApplication1", "WpfApplication1\WpfApplication1.csproj", "{06BFDE93-95A3-4B0D-82AD-E45EB1E01F00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrokeFigureCreator", "StrokeFigureCreator\StrokeFigureCreator.csproj", "{06BFDE93-95A3-4B0D-82AD-E45EB1E01F00}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
